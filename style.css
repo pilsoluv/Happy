@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+body{background:#0a2a63 url("wallpaper.jpg") center/cover no-repeat fixed;
+.box{background:rgba(255,255,255,0.92); border-radius:24px; color:#111; padding:16px; border:3px solid rgba(0,0,0,0.35);}
   <div class="app">
 
     <!-- 1페이지 -->
@@ -91,4 +93,5 @@
 
   <script src="app.js"></script>
 </body>
+
 </html>
