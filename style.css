@@ -82,3 +82,89 @@ body{
   border-radius:50%;
   border:none;
 }
+
+.page2{
+  display:grid;
+  grid-template-rows: 1fr 140px;
+  gap:16px;
+  height:100%;
+}
+
+.page2-top{
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+  padding:16px;
+}
+
+.notice-board-header{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:12px;
+  padding-bottom:10px;
+  border-bottom:1px solid rgba(0,0,0,0.08);
+}
+
+.notice-date-text{
+  text-align:center;
+  font-size:32px;
+  font-weight:900;
+}
+
+.notice-board-textarea{
+  flex:1;
+  width:100%;
+  border:none;
+  outline:none;
+  resize:none;
+  background:transparent;
+  font-size:56px;
+  font-weight:700;
+  margin-top:14px;
+}
+
+.page2-bottom{
+  display:grid;
+  grid-template-columns: 1fr 72px;
+  gap:16px;
+  min-height:0;
+}
+
+.student-area{
+  min-height:0;
+  padding:12px;
+}
+
+.student-grid{
+  height:100%;
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:12px 14px;
+  align-content:stretch;
+}
+
+.student-btn{
+  min-height:56px;
+  font-size:26px;
+  font-weight:900;
+  border:none;
+  border-radius:14px;
+  background:rgba(255,255,255,0.95);
+}
+
+.page2-buttons{
+  display:flex;
+  flex-direction:column;
+  justify-content:end;
+  align-items:center;
+  gap:12px;
+}
+
+.page2-buttons button{
+  width:52px;
+  height:52px;
+  border:none;
+  border-radius:50%;
+}
+
