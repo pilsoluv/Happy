@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>교실 대시보드</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- 1페이지 -->
+    <section id="screen1" class="screen active">
+      <div class="page1">
+
+        <!-- 1열 -->
+        <div class="col col-left">
+          <div class="box header-box" id="sheetData">왼쪽 상단 문구</div>
+          <div class="box notice-box">
+            <div class="tab-bar">
+              <button>아침활동</button>
+              <button>수업시간</button>
+              <button>쉬는시간</button>
+              <button>점심시간</button>
+            </div>
+            <div class="notice-content">
+              <textarea id="noticeInput" placeholder="활동안내"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2열 -->
+        <div class="col col-right-main">
+          <div class="box time-box">
+            <div id="dateText">2026년 3월 9일 월요일</div>
+            <div id="statusLine">4교시 12시 32분</div>
+            <div id="countdownText">5교시까지 28분 남았습니다.</div>
+          </div>
+
+          <div class="box meal-box">
+            <div class="meal-title">오늘의 급식</div>
+            <div id="mealList">급식 내용</div>
+          </div>
+        </div>
+
+        <!-- 3열 -->
+        <div class="col col-buttons">
+          <button class="round-btn" id="togglePageBtn">↔</button>
+          <button class="round-btn" id="fullscreenBtn">⛶</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2페이지 -->
+    <section id="screen2" class="screen">
+      <div class="page2">
+
+        <div class="box page2-top">
+          <div class="page2-header">
+            <button>‹</button>
+            <div id="noticeDateText">2026년 3월 9일 월요일</div>
+            <button>›</button>
+          </div>
+          <textarea id="dailyNoticeInput" placeholder="알림장을 입력하세요"></textarea>
+        </div>
+
+        <div class="page2-bottom">
+          <div class="student-area box">
+            <div id="studentGrid" class="student-grid">
+              <button class="student-btn">김민채</button>
+              <button class="student-btn">김아준</button>
+              <button class="student-btn">민예린</button>
+              <button class="student-btn">송유하</button>
+              <button class="student-btn">신서율</button>
+              <button class="student-btn">신수호</button>
+              <button class="student-btn">안동윤</button>
+            </div>
+          </div>
+
+          <div class="page2-side-buttons">
+            <button class="round-btn">↔</button>
+            <button class="round-btn">⛶</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
