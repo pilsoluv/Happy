@@ -53,39 +53,36 @@
     </section>
 
     <!-- 2페이지 -->
-    <section id="screen2" class="screen">
-      <div class="page2">
+   <section id="screen2" class="screen">
+  <div class="page2">
 
-        <div class="box page2-top">
-          <div class="page2-header">
-            <button>‹</button>
-            <div id="noticeDateText">2026년 3월 9일 월요일</div>
-            <button>›</button>
-          </div>
-          <textarea id="dailyNoticeInput" placeholder="알림장을 입력하세요"></textarea>
+    <div class="page2-top box">
+      <div class="notice-board-header">
+        <button class="date-arrow" onclick="changeNoticeDate(-1)">‹</button>
+        <div id="noticeDateText" class="notice-date-text">2026년 3월 9일 월요일</div>
+        <div class="notice-font-control">
+          <button class="notice-font-btn" onclick="adjustPage2Font(-8)">-</button>
+          <span id="page2FontSizeText">68</span>
+          <button class="notice-font-btn" onclick="adjustPage2Font(8)">+</button>
         </div>
-
-        <div class="page2-bottom">
-          <div class="student-area box">
-            <div id="studentGrid" class="student-grid">
-              <button class="student-btn">김민채</button>
-              <button class="student-btn">김아준</button>
-              <button class="student-btn">민예린</button>
-              <button class="student-btn">송유하</button>
-              <button class="student-btn">신서율</button>
-              <button class="student-btn">신수호</button>
-              <button class="student-btn">안동윤</button>
-            </div>
-          </div>
-
-          <div class="page2-side-buttons">
-            <button class="round-btn">↔</button>
-            <button class="round-btn">⛶</button>
-          </div>
-        </div>
-
       </div>
-    </section>
+
+      <textarea id="dailyNoticeInput" class="notice-board-textarea" placeholder="알림장을 입력하세요"></textarea>
+    </div>
+
+    <div class="page2-bottom">
+      <div class="student-area box">
+        <div id="studentGrid" class="student-grid"></div>
+      </div>
+
+      <div class="page2-buttons">
+        <button onclick="togglePage()">↔</button>
+        <button onclick="toggleFullscreen()">⛶</button>
+      </div>
+    </div>
+
+  </div>
+</section>
 
   </div>
 
