@@ -1,49 +1,49 @@
-:root{
-  --page-padding: 20px;
-  --col-gap: 18px;
-  --row-gap: 18px;
-
-  --page1-col-left: 1.2fr;
-  --page1-col-right: 0.9fr;
-  --page1-col-buttons: 72px;
-
-  --left-top-h: 110px;
-  --right-top-h: 180px;
-
-  --page2-bottom-h: 330px;
-  --page2-side-w: 72px;
-
-  --student-gap-x: 16px;
-  --student-gap-y: 14px;
-  --student-btn-h: 72px;
-  --student-font: 30px;
-}
-
-*{ box-sizing:border-box; }
-html,body{
+html, body{
   margin:0;
   width:100%;
   height:100%;
-  font-family: Arial, sans-serif;
 }
+
 body{
-  background:#0a2a63;
-  color:#fff;
+  background:#0a2a63 url("wallpaper.jpg") center/cover no-repeat fixed;
+  font-family:sans-serif;
 }
 
 .app{
   width:100%;
   height:100%;
-  padding:var(--page-padding);
+  padding:20px;
+  box-sizing:border-box;
 }
 
-.screen{
-  display:none;
+.page1{
   width:100%;
   height:100%;
+  display:grid;
+  grid-template-columns: 1.2fr 0.9fr 80px;
+  gap:16px;
 }
-.screen.active{
-  display:block;
+
+.col{
+  min-height:0;
+}
+
+.col-left{
+  display:grid;
+  grid-template-rows:120px 1fr;
+  gap:16px;
+}
+
+.col-middle{
+  display:grid;
+  grid-template-rows:120px 1fr;
+  gap:16px;
+}
+
+.col-right{
+  display:grid;
+  grid-template-rows:1fr auto;
+  gap:16px;
 }
 
 .box{
@@ -51,189 +51,34 @@ body{
   border-radius:24px;
   color:#111;
   padding:16px;
-}
-
-/* 1페이지 */
-.page1{
-  width:100%;
-  height:100%;
-  display:grid;
-  grid-template-columns: var(--page1-col-left) var(--page1-col-right) var(--page1-col-buttons);
-  gap:var(--col-gap);
-}
-
-.col-left,
-.col-right-main{
-  min-height:0;
-}
-
-.col-left{
-  display:grid;
-  grid-template-rows: var(--left-top-h) 1fr;
-  gap:var(--row-gap);
-}
-
-.col-right-main{
-  display:grid;
-  grid-template-rows: var(--right-top-h) 1fr;
-  gap:var(--row-gap);
-}
-
-.col-buttons{
-  display:flex;
-  flex-direction:column;
-  justify-content:end;
-  align-items:center;
-  gap:12px;
-}
-
-.tab-bar{
-  display:flex;
-  gap:8px;
-  margin-bottom:12px;
-}
-
-.tab-bar button{
-  padding:10px 14px;
+  border:3px solid rgba(0,0,0,0.35);
+  box-sizing:border-box;
 }
 
 .notice-content,
-.notice-box{
-  min-height:0;
+.notice-box textarea{
+  width:100%;
+  height:100%;
 }
 
-#noticeInput{
-  width:100%;
-  height:calc(100% - 50px);
+.notice-box textarea{
   border:none;
   resize:none;
-  font-size:36px;
   background:transparent;
+  font-size:24px;
+  outline:none;
 }
 
-.time-box{
+.side-buttons{
   display:flex;
   flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
+  gap:12px;
+  justify-content:end;
 }
 
-#dateText{
-  font-size:42px;
-  font-weight:700;
-  margin-bottom:10px;
-}
-
-#statusLine{
-  font-size:72px;
-  font-weight:800;
-  margin-bottom:10px;
-}
-
-#countdownText{
-  font-size:30px;
-  font-weight:700;
-}
-
-.meal-box{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-}
-
-.meal-title{
-  font-size:42px;
-  font-weight:800;
-  margin-bottom:16px;
-}
-
-#mealList{
-  font-size:30px;
-  line-height:1.3;
-  white-space:pre-line;
-}
-
-.round-btn{
-  width:52px;
-  height:52px;
+.side-buttons button{
+  width:60px;
+  height:60px;
   border-radius:50%;
   border:none;
-  font-size:24px;
-  cursor:pointer;
-}
-
-/* 2페이지 */
-.page2{
-  width:100%;
-  height:100%;
-  display:grid;
-  grid-template-rows: 1fr var(--page2-bottom-h);
-  gap:var(--row-gap);
-}
-
-.page2-top{
-  min-height:0;
-  display:flex;
-  flex-direction:column;
-}
-
-.page2-header{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:20px;
-  margin-bottom:12px;
-}
-
-#noticeDateText{
-  font-size:42px;
-  font-weight:800;
-}
-
-#dailyNoticeInput{
-  width:100%;
-  flex:1;
-  border:none;
-  resize:none;
-  background:transparent;
-  font-size:48px;
-}
-
-.page2-bottom{
-  display:grid;
-  grid-template-columns: 1fr var(--page2-side-w);
-  gap:var(--col-gap);
-}
-
-.student-area{
-  min-height:0;
-}
-
-.student-grid{
-  width:100%;
-  height:100%;
-  display:grid;
-  grid-template-columns:repeat(7,1fr);
-  gap:var(--student-gap-y) var(--student-gap-x);
-  align-content:stretch;
-}
-
-.student-btn{
-  min-height:var(--student-btn-h);
-  font-size:var(--student-font);
-  font-weight:700;
-  border:none;
-  border-radius:14px;
-  cursor:pointer;
-}
-
-.page2-side-buttons{
-  display:flex;
-  flex-direction:column;
-  justify-content:end;
-  align-items:center;
-  gap:12px;
 }
